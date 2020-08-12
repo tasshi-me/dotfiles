@@ -115,6 +115,7 @@ export LIBRARY_PATH="${LIBRARY_PATH}:/usr/local/lib"
 #-----#
 # git #
 #-----#
+DEFAULT_BRANCH=main
 alias g=git
 #  git status
 alias gs='git status -sb'
@@ -141,6 +142,11 @@ alias gl='git log --oneline'
 #  git reset
 alias gr='git reset'
 alias ghard='git reset --hard'
+#  git init
+alias ginit=" \
+git init && \
+git checkout -b ${DEFAULT_BRANCH} && \
+git commit --allow-empty -m 'initial commit'"
 
 #---------#
 # aliases #
