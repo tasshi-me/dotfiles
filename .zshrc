@@ -116,16 +116,31 @@ export LIBRARY_PATH="${LIBRARY_PATH}:/usr/local/lib"
 # git #
 #-----#
 alias g=git
-
+#  git status
 alias gs='git status -sb'
+#  git switch
+alias gsw='git checkout -b'
+#  git fetch
+alias gf='git fetch --prune'
+#  git pull
 alias gp='git pull'
-
+#  git push
+alias gpush='git push'
+alias gforce='git push --force-with-lease'
+#  git diff
+alias gd='git diff'
+#  git add
 alias ga='git add'
+alias gap='git add -p'
 alias gaa='git add -A'
-
+#  git commit
 alias gc='git commit -m'
-
+alias gca='git commit --amend'
+#  git log
 alias gl='git log --oneline'
+#  git reset
+alias gr='git reset'
+alias ghard='git reset --hard'
 
 #---------#
 # aliases #
