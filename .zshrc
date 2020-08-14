@@ -146,7 +146,10 @@ alias gl='git log --oneline'
 # git reset
 alias gr='git reset'
 alias ghard='git reset --hard'
-#  git init
+function gback(){
+  command git reset --hard HEAD~$1
+}
+# git init
 alias ginit=" \
 git init && \
 git checkout -b ${DEFAULT_BRANCH} && \
