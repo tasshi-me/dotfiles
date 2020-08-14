@@ -117,29 +117,33 @@ export LIBRARY_PATH="${LIBRARY_PATH}:/usr/local/lib"
 #-----#
 DEFAULT_BRANCH=main
 alias g=git
-#  git status
+# git status
 alias gs='git status -sb'
-#  git switch
-alias gsw='git checkout -b'
-#  git fetch
+# git branch
+alias gb='git branch'
+alias gba='git branch -a'
+# git switch
+alias gsw='git switch'
+# git fetch
 alias gf='git fetch --prune'
-#  git pull
+# git pull
 alias gp='git pull'
-#  git push
+# git push
 alias gpush='git push'
 alias gforce='git push --force-with-lease'
-#  git diff
+# git diff
 alias gd='git diff'
-#  git add
+# git add
 alias ga='git add'
 alias gap='git add -p'
 alias gaa='git add -A'
-#  git commit
-alias gc='git commit -m'
+# git commit
+alias gc='git commit'
 alias gca='git commit --amend'
-#  git log
+alias gcm='git commit -m'
+# git log
 alias gl='git log --oneline'
-#  git reset
+# git reset
 alias gr='git reset'
 alias ghard='git reset --hard'
 #  git init
