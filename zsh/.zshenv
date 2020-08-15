@@ -8,7 +8,7 @@
 
 # if ZDOTDIR is not set
 if [ -z "$ZDOTDIR" ]; then
-  export ZDOTDIR=$HOME/.zsh
+  export ZDOTDIR=${HOME}/.config/zsh
   source $ZDOTDIR/.zshenv
 fi
 
