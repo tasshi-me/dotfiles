@@ -1,0 +1,10 @@
+# all ignore
+/*
+/.**
+
+# git
+!/.gitignore
+!/.gitmodules
+
+# allowlist
+!/zsh

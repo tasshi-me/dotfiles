@@ -1,0 +1,15 @@
+# all ignore
+/*
+/.**
+
+# git
+!/.gitignore
+
+# allowlist
+!/.zprezto
+!/.zlogin
+!/.zlogout
+!/.zpreztorc
+!/.zprofile
+!/.zshenv
+!/.zshrc
