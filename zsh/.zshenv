@@ -6,6 +6,12 @@
 # /___|___/_| |_|\___|_| |_|\_/
 #
 
+# if ZDOTDIR is not set
+if [ -z "$ZDOTDIR" ]; then
+  export ZDOTDIR=$HOME/.zsh
+  source $ZDOTDIR/.zshenv
+fi
+
 #--------#
 # Prezto #
 #--------#
