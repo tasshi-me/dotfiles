@@ -66,6 +66,9 @@ if [[ -e "${HOME}/.zsh/completion" ]]; then
 fi
 # load completions
 autoload -Uz compinit && compinit
+# Docker
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 #----#
 # Go #
