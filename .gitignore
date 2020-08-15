@@ -7,4 +7,5 @@
 !/.gitmodules
 
 # allowlist
+!/git
 !/zsh
