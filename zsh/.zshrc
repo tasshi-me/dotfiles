@@ -36,9 +36,9 @@ fi
 VISUAL=/usr/bin/vim
 EDITOR=/usr/bin/vim
 # open zshrc with VISUAL editor
-alias zshrc="${VISUAL} ~/.zshrc"
+alias zshrc="${VISUAL} ${ZDOTDIR:-$HOME}/.zshrc"
 # reload zshrc
-alias sz='source ~/.zshrc'
+alias sz="source ${ZDOTDIR:-$HOME}/.zshrc"
 # handler
 function command_not_found_handler(){
   echo -e "m9(^Д ^)"
@@ -61,8 +61,8 @@ if [[ -e "/usr/local/share/zsh-completions" ]]; then
   fpath=(/usr/local/share/zsh-completions ${fpath})
 fi
 # ${HOME}/.zsh/completion
-if [[ -e "${HOME}/.zsh/completion" ]]; then
-  fpath=(${HOME}/.zsh/completion ${fpath})
+if [[ -e "${ZDOTDIR:-$HOME}/completion" ]]; then
+  fpath=(${ZDOTDIR:-$HOME}/completion ${fpath})
 fi
 # load completions
 autoload -Uz compinit && compinit
