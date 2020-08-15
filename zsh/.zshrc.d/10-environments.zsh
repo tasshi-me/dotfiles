@@ -3,6 +3,14 @@
 #----------#
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+#------#
+# Rust #
+#------#
+export CARGO_HOME="${XDG_DATA_HOME}"/cargo
+export CARGO="${CARGO_HOME}"/bin/cargo
+export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
+export PATH="${CARGO_HOME}/bin:${PATH}"
+
 #----#
 # Go #
 #----#
