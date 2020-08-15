@@ -44,6 +44,11 @@ function command_not_found_handler(){
   echo -e "m9(^Д ^)"
 }
 
+#----------#
+# homebrew #
+#----------#
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 #-------------#
 # completions #
 #-------------#
