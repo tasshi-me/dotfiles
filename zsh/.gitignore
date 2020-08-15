@@ -7,9 +7,12 @@
 
 # allowlist
 !/.zprezto
+!/.zprezto/*
 !/.zlogin
 !/.zlogout
 !/.zpreztorc
 !/.zprofile
 !/.zshenv
 !/.zshrc
+!/.zshrc.d/
+!/.zshrc.d/*
