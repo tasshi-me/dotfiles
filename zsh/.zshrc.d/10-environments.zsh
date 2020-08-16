@@ -1,3 +1,9 @@
+#----------------#
+# basic commands #
+#----------------#
+# disable less history
+export LESSHISTFILE=-
+
 #----------#
 # homebrew #
 #----------#
