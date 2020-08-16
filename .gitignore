@@ -3,6 +3,7 @@
 /.**
 
 # git
+!/.gitattributes
 !/.gitignore
 !/.gitmodules
 

@@ -11,3 +11,6 @@
 	trustExitCode = true
 [pull]
 	rebase = false
+[filter "ignore-npmrc-authtoken"]
+    smudge = cat
+    clean = sed '/:_authToken/d'
