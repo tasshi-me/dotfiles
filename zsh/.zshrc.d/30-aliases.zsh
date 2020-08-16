@@ -53,6 +53,7 @@ alias gpush='git push'
 alias gforce='git push --force-with-lease'
 # git diff
 alias gd='git diff'
+alias gdc='git diff --cached'
 # git add
 alias ga='git add'
 alias gap='git add -p'
