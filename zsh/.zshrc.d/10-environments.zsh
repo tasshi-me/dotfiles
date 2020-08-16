@@ -29,7 +29,12 @@ export GO111MODULE=auto
 #--------#
 # direnv
 if [[ -s "/usr/local/bin/direnv" ]]; then
-  eval "$(direnv hook zsh)"
+  if [ -n "$ZSH_NAME" ]; then
+    eval "$(direnv hook zsh)"
+  fi
+  if [ -n "$BASH" ]; then
+    eval "$(direnv hook bash)"
+  fi
 fi
 ## rbenv
 if [[ -s "${HOME}/.rbenv/bin/rbenv" ]]; then
