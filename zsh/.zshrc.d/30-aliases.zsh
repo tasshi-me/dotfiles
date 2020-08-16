@@ -9,6 +9,8 @@ alias ll='ls -Ahl'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+# history
+alias hist='history -E 10 | grep'
 # enable alias in sudo
 alias sudo='sudo '
 
