@@ -25,6 +25,12 @@ export PATH="${GOPATH}/bin:${PATH}"
 export GO111MODULE=auto
 
 #---------#
+# Node.js #
+#---------#
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node/node_repl_history
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+
+#---------#
 # aws-cli #
 #---------#
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
