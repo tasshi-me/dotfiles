@@ -8,4 +8,5 @@
 
 # allowlist
 !/git
+!/karabiner
 !/zsh

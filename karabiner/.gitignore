@@ -1,0 +1,12 @@
+# all ignore
+/*
+/.**
+
+# git
+!/.gitignore
+
+# allowlist
+!/assets
+!/assets/*
+!/automatic_backups
+!/karabiner.json
