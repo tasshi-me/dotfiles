@@ -8,6 +8,7 @@
 !/.gitmodules
 
 # project file
+!/README.md
 !/LICENSE
 
 # allowlist
