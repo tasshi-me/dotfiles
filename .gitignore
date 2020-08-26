@@ -7,6 +7,9 @@
 !/.gitignore
 !/.gitmodules
 
+# project file
+!/LICENSE
+
 # allowlist
 !/bash
 !/git
