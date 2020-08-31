@@ -76,6 +76,9 @@ git init && \
 git checkout -b ${DEFAULT_BRANCH} && \
 git commit --allow-empty -m 'initial commit'"
 
+# gitui (https://github.com/extrawurst/gitui)
+alias gui='gitui'
+
 #--------#
 # others #
 #--------#
