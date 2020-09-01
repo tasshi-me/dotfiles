@@ -62,6 +62,7 @@ alias gaa='git add -A'
 alias gc='git commit'
 alias gca='git commit --amend'
 alias gcm='git commit -m'
+alias gcn='git commit -n'
 # git log
 alias gl='git log --oneline'
 # git reset
