@@ -94,3 +94,7 @@ fi
 # wttr.in
 alias wttr='curl wttr.in/Fukuoka'
 alias wttr2='curl v2.wttr.in/Fukuoka'
+
+# tar
+alias reitou='tar -zcvf'
+alias kaitou='tar -xvf'
