@@ -79,66 +79,6 @@
                                 "type": "basic"
                             }
                         ]
-                    },
-                    {
-                        "conditions": [
-                            {
-                                "keyboard_types": [
-                                    "ansi",
-                                    "iso"
-                                ],
-                                "type": "keyboard_type_if"
-                            }
-                        ],
-                        "description": "Left Ctrl+Spaceを押したときに、英数キーを送信する",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "japanese_eisuu"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "conditions": [
-                            {
-                                "keyboard_types": [
-                                    "ansi",
-                                    "iso"
-                                ],
-                                "type": "keyboard_type_if"
-                            }
-                        ],
-                        "description": "Left Shift+Spaceを押したときに、かなキーを送信する",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "japanese_kana"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
                     }
                 ]
             },
