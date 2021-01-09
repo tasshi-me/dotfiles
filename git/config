@@ -14,3 +14,5 @@
 [filter "ignore-npmrc-authtoken"]
     smudge = cat
     clean = sed '/:_authToken/d'
+[init]
+	defaultBranch = main
