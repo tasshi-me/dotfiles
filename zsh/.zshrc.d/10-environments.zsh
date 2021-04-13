@@ -30,6 +30,12 @@ export GO111MODULE=auto
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node/node_repl_history
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
+#------#
+# deno #
+#------#
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 #---------#
 # aws-cli #
 #---------#
