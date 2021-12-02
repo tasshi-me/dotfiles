@@ -776,6 +776,16 @@
                                     "key_code": "delete_forward"
                                 }
                             ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "right_option"
+                            },
+                            "to": [
+                                {
+                                    "apple_vendor_top_case_key_code": "keyboard_fn"
+                                }
+                            ]
                         }
                     ]
                 },
