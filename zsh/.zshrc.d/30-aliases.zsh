@@ -65,6 +65,7 @@ alias gcm='git commit -m'
 alias gcn='git commit -n'
 # git log
 alias gl='git log --oneline'
+alias gtree='git log --oneline --graph'
 # git reset
 alias gr='git reset'
 alias ghard='git reset --hard'
