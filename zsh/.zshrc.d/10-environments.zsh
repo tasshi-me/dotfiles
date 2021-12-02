@@ -65,8 +65,10 @@ if [[ -s "${HOME}/.nodenv/bin/nodenv" ]]; then
   eval "$(nodenv init -)"
 fi
 ## pyenv
-if [[ -e "/usr/local/opt/openssl@1.1/bin/" ]]; then
-  export PATH="/usr/local/opt/openssl@1.1/bin:${PATH}"
+if [[ -e "${HOME}/.pyenv/bin/pyenv" ]]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 fi
 
