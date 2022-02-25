@@ -110,7 +110,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # ln -sn ${RUSTUP_HOME} ${HOME}/.rustup
 
 # zsh-completions
-echo "Initialize zsh-completions"
+echo "--- Initialize zsh-completions ---"
 chmod 755 $(brew --prefix)/share
 FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 autoload -Uz compinit
