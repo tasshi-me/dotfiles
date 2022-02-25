@@ -88,13 +88,6 @@ alias gui='gitui'
 alias xcode='open -a /Applications/Xcode.app'
 # tree alias
 alias tree='tree -L 5 --dirsfirst'
-# medis
-if [[ -e "${XDG_DATA_HOME}/medis/" ]]; then
-  alias medis="pushd ${XDG_DATA_HOME}/medis;npm start;popd;"
-fi
-# wttr.in
-alias wttr='curl wttr.in/Fukuoka'
-alias wttr2='curl v2.wttr.in/Fukuoka'
 
 # tar
 alias reitou='tar -zcvf'
