@@ -19,10 +19,15 @@ echo "--- Install Homebrew ---"
 brew bundle
 
 # clone dotfiles repo
-echo "--- Download dotfiles ---"
+echo "--- Clone dotfiles repository ---"
 export DOTFILES_DIR=${HOME}/dotfiles
-# git clone https://github.com/mshrtsr/dotfiles.git ${HOME}/dotfiles
+if [[ ! -d "${DOTFILES_DIR}" ]]; then
+  mkdir -p ${DOTFILES_DIR}
+  git clone https://github.com/mshrtsr/dotfiles.git ${DOTFILES_DIR}
+fi
 cd ${DOTFILES_DIR}
+git pull
+git submodule update --init --recursive
 
 # bash
 echo "--- Create symbolic link of bash configuration ---"
@@ -35,10 +40,6 @@ echo "--- Create symbolic link of zsh configuration ---"
 rm -f ${XDG_CONFIG_HOME}/zsh ${HOME}/.zshenv
 ln -sn ${DOTFILES_DIR}/zsh ${XDG_CONFIG_HOME}/zsh
 ln -sn ${DOTFILES_DIR}/zsh/.zshenv ${HOME}/.zshenv
-
-# zprezto
-echo "--- Install Prezto ---"
-git submodule update --init --recursive
 
 # change default shell to zsh
 # NOTE: The default interactive shell is now zsh
