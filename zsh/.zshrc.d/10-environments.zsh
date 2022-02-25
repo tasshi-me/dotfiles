@@ -8,6 +8,9 @@ export LESSHISTFILE=-
 # homebrew #
 #----------#
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+if [[ -s "/opt/homebrew/bin/brew" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 #------#
 # Rust #
