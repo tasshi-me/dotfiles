@@ -6,8 +6,8 @@ if type brew &>/dev/null; then
   fpath=($(brew --prefix)/share/zsh/site-functions ${fpath})
 fi
 # zsh-completions
-if [[ -e "/usr/local/share/zsh-completions" ]]; then
-  fpath=(/usr/local/share/zsh-completions ${fpath})
+if [[ -e "$(brew --prefix)/share/zsh-completions" ]]; then
+  fpath=($(brew --prefix)/share/zsh-completions ${fpath})
 fi
 # ${HOME}/.zsh/completion
 if [[ -e "${ZDOTDIR:-$HOME}/completion" ]]; then
