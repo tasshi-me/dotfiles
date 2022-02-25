@@ -11,6 +11,9 @@
 !/README.md
 !/LICENSE
 
+# install script
+!/install.sh
+
 # allowlist
 !/bash
 !/git
