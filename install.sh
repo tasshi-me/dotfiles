@@ -16,7 +16,7 @@ echo "XDG_DATA_HOME: ${XDG_DATA_HOME}"
 # homebrew
 echo "--- Install Homebrew ---"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-# brew bundle
+brew bundle
 
 # clone dotfiles repo
 echo "--- Download dotfiles ---"

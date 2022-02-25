@@ -13,6 +13,7 @@
 
 # install script
 !/install.sh
+!/Brewfile
 
 # allowlist
 !/bash
