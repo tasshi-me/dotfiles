@@ -4,7 +4,9 @@ Just another dotfiles :musical_score:
 
 ## Installation
 
-The install scripts are now in development.
+```
+zsh -c "$(curl --proto '=https' --tlsv1.2 -fsSL https://raw.githubusercontent.com/mshrtsr/dotfiles/main/install.sh)"
+```
 
 ## Lisence
 
