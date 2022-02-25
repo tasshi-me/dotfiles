@@ -13,15 +13,10 @@ echo "XDG_CONFIG_HOME: ${XDG_CONFIG_HOME}"
 echo "XDG_CACHE_HOME: ${XDG_CACHE_HOME}"
 echo "XDG_DATA_HOME: ${XDG_DATA_HOME}"
 
-# homebrew
-echo "--- Install Homebrew ---"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-brew bundle
-
 # clone dotfiles repo
 echo "--- Clone dotfiles repository ---"
 export DOTFILES_DIR=${HOME}/dotfiles
-if [[ ! -d "${DOTFILES_DIR}" ]]; then
+if [[ ! -d "${DOTFILES_DIR}/.git" ]]; then
   mkdir -p ${DOTFILES_DIR}
   git clone https://github.com/mshrtsr/dotfiles.git ${DOTFILES_DIR}
 fi
@@ -55,6 +50,23 @@ ln -sn ${DOTFILES_DIR}/git ${XDG_CONFIG_HOME}/git
 echo "--- Create symbolic link of Karabiner-Elements configuration ---"
 rm -f ${XDG_CONFIG_HOME}/karabiner
 ln -sn ${DOTFILES_DIR}/karabiner ${XDG_CONFIG_HOME}/karabiner
+
+# set screen capture filename
+echo "--- Set screen capture filename ---"
+defaults write com.apple.screencapture name "Screen Shot"
+
+# show all files
+echo "--- Set show all files on Finder ---"
+defaults write com.apple.finder AppleShowAllFiles -bool true
+echo "--- Restart Finder ---"
+killall Finder
+
+# homebrew
+echo "--- Install Homebrew ---"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+echo "--- Install Apps with Homebrew ---"
+brew bundle
 
 # nodenv
 # https://github.com/nodenv/nodenv
