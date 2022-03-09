@@ -43,7 +43,7 @@ export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
 # anyenv #
 #--------#
 # direnv
-if [[ -s "/usr/local/bin/direnv" ]]; then
+if [[ -s "/opt/homebrew/bin/direnv" ]]; then
   if [ -n "$ZSH_NAME" ]; then
     eval "$(direnv hook zsh)"
   fi
