@@ -12,6 +12,11 @@ if [[ -s "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+#-----------#
+# JetBrains #
+#-----------#
+export PATH="${XDG_DATA_HOME}/JetBrains/bin:${PATH}"
+
 #------#
 # Rust #
 #------#
