@@ -29,7 +29,7 @@ export PATH="${CARGO_HOME}/bin:${PATH}"
 # Go #
 #----#
 export GOPATH="${HOME}/go"
-export PATH="${GOPATH}/bin:${PATH}"
+export PATH="/usr/local/go/bin:${PATH}"
 export GO111MODULE=auto
 
 #---------#
