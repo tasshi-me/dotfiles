@@ -51,15 +51,17 @@ echo "--- Create symbolic link of Karabiner-Elements configuration ---"
 rm -f ${XDG_CONFIG_HOME}/karabiner
 ln -sn ${DOTFILES_DIR}/karabiner ${XDG_CONFIG_HOME}/karabiner
 
-# set screen capture filename
-echo "--- Set screen capture filename ---"
-defaults write com.apple.screencapture name "Screen Shot"
+if type "defaults" > /dev/null 2>&1; then
+  # set screen capture filename
+  echo "--- Set screen capture filename ---"
+  defaults write com.apple.screencapture name "Screen Shot"
 
-# show all files
-echo "--- Set show all files on Finder ---"
-defaults write com.apple.finder AppleShowAllFiles -bool true
-echo "--- Restart Finder ---"
-killall Finder
+  # show all files
+  echo "--- Set show all files on Finder ---"
+  defaults write com.apple.finder AppleShowAllFiles -bool true
+  echo "--- Restart Finder ---"
+  killall Finder
+fi
 
 # homebrew
 echo "--- Install Homebrew ---"
