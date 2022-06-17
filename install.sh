@@ -112,6 +112,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # ln -sn ${CARGO_HOME} ${HOME}/.cargo
 # ln -sn ${RUSTUP_HOME} ${HOME}/.rustup
 
+# macOS　only
+if type "defaults" > /dev/null 2>&1; then
 # zsh-completions
 echo "--- Initialize zsh-completions ---"
 chmod 755 $(brew --prefix)/share
@@ -128,5 +130,6 @@ ZSH_SITE_FUNCTIONS=$(brew --prefix)/share/zsh/site-functions
 rm -f ${ZSH_SITE_FUNCTIONS}/_docker ${ZSH_SITE_FUNCTIONS}/_docker-compose
 ln -sn ${DOCKER_APP_ETC}/docker.zsh-completion ${ZSH_SITE_FUNCTIONS}/_docker
 ln -sn ${DOCKER_APP_ETC}/docker-compose.zsh-completion ${ZSH_SITE_FUNCTIONS}/_docker-compose
+fi
 
 echo "Done!!"
