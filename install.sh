@@ -114,22 +114,22 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # macOS　only
 if type "defaults" > /dev/null 2>&1; then
-# zsh-completions
-echo "--- Initialize zsh-completions ---"
-chmod 755 $(brew --prefix)/share
-FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-autoload -Uz compinit
-compinit
+  # zsh-completions
+  echo "--- Initialize zsh-completions ---"
+  chmod 755 $(brew --prefix)/share
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  autoload -Uz compinit
+  compinit
 
-# Docker Desktop for Mac
-# shell completion
-# https://docs.docker.com/docker-for-mac/#zsh
-echo "--- Create symbolic link of Docker shell completion ---"
-DOCKER_APP_ETC=/Applications/Docker.app/Contents/Resources/etc
-ZSH_SITE_FUNCTIONS=$(brew --prefix)/share/zsh/site-functions
-rm -f ${ZSH_SITE_FUNCTIONS}/_docker ${ZSH_SITE_FUNCTIONS}/_docker-compose
-ln -sn ${DOCKER_APP_ETC}/docker.zsh-completion ${ZSH_SITE_FUNCTIONS}/_docker
-ln -sn ${DOCKER_APP_ETC}/docker-compose.zsh-completion ${ZSH_SITE_FUNCTIONS}/_docker-compose
+  # Docker Desktop for Mac
+  # shell completion
+  # https://docs.docker.com/docker-for-mac/#zsh
+  echo "--- Create symbolic link of Docker shell completion ---"
+  DOCKER_APP_ETC=/Applications/Docker.app/Contents/Resources/etc
+  ZSH_SITE_FUNCTIONS=$(brew --prefix)/share/zsh/site-functions
+  rm -f ${ZSH_SITE_FUNCTIONS}/_docker ${ZSH_SITE_FUNCTIONS}/_docker-compose
+  ln -sn ${DOCKER_APP_ETC}/docker.zsh-completion ${ZSH_SITE_FUNCTIONS}/_docker
+  ln -sn ${DOCKER_APP_ETC}/docker-compose.zsh-completion ${ZSH_SITE_FUNCTIONS}/_docker-compose
 fi
 
 echo "Done!!"
