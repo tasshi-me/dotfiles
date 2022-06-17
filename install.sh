@@ -51,6 +51,7 @@ echo "--- Create symbolic link of Karabiner-Elements configuration ---"
 rm -f ${XDG_CONFIG_HOME}/karabiner
 ln -sn ${DOTFILES_DIR}/karabiner ${XDG_CONFIG_HOME}/karabiner
 
+# macOS　only
 if type "defaults" > /dev/null 2>&1; then
   # set screen capture filename
   echo "--- Set screen capture filename ---"
@@ -61,14 +62,14 @@ if type "defaults" > /dev/null 2>&1; then
   defaults write com.apple.finder AppleShowAllFiles -bool true
   echo "--- Restart Finder ---"
   killall Finder
+  
+  # homebrew
+  echo "--- Install Homebrew ---"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  echo "--- Install Apps with Homebrew ---"
+  brew bundle
 fi
-
-# homebrew
-echo "--- Install Homebrew ---"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-eval "$(/opt/homebrew/bin/brew shellenv)"
-echo "--- Install Apps with Homebrew ---"
-brew bundle
 
 # nodenv
 # https://github.com/nodenv/nodenv
