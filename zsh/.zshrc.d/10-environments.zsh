@@ -73,6 +73,11 @@ if [[ -e "${HOME}/.pyenv/bin/pyenv" ]]; then
   eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 fi
+## tfenv
+if [[ -e "${HOME}/.tfenv/bin/tfenv" ]]; then
+  export TFENV_ROOT="$HOME/.tfenv"
+  export PATH="$TFENV_ROOT/bin:$PATH"
+fi
 
 #---------#
 # library #
