@@ -26,3 +26,14 @@
     clean = sed '/:_authToken/d'
 [init]
 	defaultBranch = main
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://github.dev.cybozu.co.jp"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[push]
+	autoSetupRemote = true
