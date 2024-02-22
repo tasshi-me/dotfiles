@@ -16,5 +16,5 @@ export HISTFILE="${XDG_DATA_HOME}/zsh/history"
 
 # handler
 function command_not_found_handler(){
-  echo -e "m9(^Д ^)"
+  echo -e "m9(^Д ^): $0" 1>&2
 }
