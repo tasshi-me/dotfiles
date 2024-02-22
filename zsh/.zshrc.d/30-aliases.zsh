@@ -76,7 +76,7 @@ function gback(){
 alias ginit=" \
 git init && \
 git checkout -b ${DEFAULT_BRANCH} && \
-git commit --allow-empty -m 'initial commit'"
+git commit --allow-empty -m 'chore: initial commit'"
 
 # gitui (https://github.com/extrawurst/gitui)
 alias gui='gitui'
