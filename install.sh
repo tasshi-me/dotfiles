@@ -18,7 +18,7 @@ echo "--- Clone dotfiles repository ---"
 export DOTFILES_DIR=${HOME}/dotfiles
 if [[ ! -d "${DOTFILES_DIR}/.git" ]]; then
   mkdir -p ${DOTFILES_DIR}
-  git clone https://github.com/mshrtsr/dotfiles.git ${DOTFILES_DIR}
+  git clone https://github.com/tasshi-me/dotfiles.git ${DOTFILES_DIR}
 fi
 cd ${DOTFILES_DIR}
 git pull
@@ -62,7 +62,7 @@ if type "defaults" > /dev/null 2>&1; then
   defaults write com.apple.finder AppleShowAllFiles -bool true
   echo "--- Restart Finder ---"
   killall Finder
-  
+
   # homebrew
   echo "--- Install Homebrew ---"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"

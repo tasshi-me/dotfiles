@@ -5,7 +5,7 @@ Just another dotfiles :musical_score:
 ## Installation
 
 ```
-zsh -c "$(curl --proto '=https' --tlsv1.2 -fsSL https://raw.githubusercontent.com/mshrtsr/dotfiles/main/install.sh)"
+zsh -c "$(curl --proto '=https' --tlsv1.2 -fsSL https://raw.githubusercontent.com/tasshi-me/dotfiles/main/install.sh)"
 ```
 
 ## Lisence
