@@ -227,6 +227,10 @@
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>NeverWarnAboutShortLivedSessions_409E16D1-DA5F-4C87-87B7-0072720090AD</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_409E16D1-DA5F-4C87-87B7-0072720090AD_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -799,7 +803,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>HackGenConsoleNFJ-Regular 16</string>
+			<string>Menlo-Regular 16</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
