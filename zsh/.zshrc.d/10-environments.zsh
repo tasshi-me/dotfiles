@@ -32,6 +32,17 @@ export GOPATH="${HOME}/go"
 export PATH="/usr/local/go/bin:${PATH}"
 export GO111MODULE=auto
 
+#------#
+# Ruby #
+#------#
+if [[ -s "/opt/homebrew/bin/brew" ]]; then
+  if [[ -s "$(brew --prefix)/opt/chruby/share/chruby/" ]]; then
+    source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
+    source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+    chruby ruby-3.1.3
+  fi
+fi
+
 #---------#
 # Node.js #
 #---------#
@@ -43,6 +54,14 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 #---------#
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
+
+#----------#
+# OrbStack #
+#----------#
+if [[ -s "${HOME}/.orbstack/shell/init.zsh" ]]; then
+  # Added by OrbStack: command-line tools and integration
+  source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+fi
 
 #--------#
 # anyenv #
@@ -77,6 +96,11 @@ fi
 if [[ -e "${HOME}/.tfenv/bin/tfenv" ]]; then
   export TFENV_ROOT="$HOME/.tfenv"
   export PATH="$TFENV_ROOT/bin:$PATH"
+fi
+
+## kintone
+if [[ -e "${XDG_DATA_HOME}/kintone/bin/" ]]; then
+  export PATH="${XDG_DATA_HOME}/kintone/bin:$PATH"
 fi
 
 #---------#
