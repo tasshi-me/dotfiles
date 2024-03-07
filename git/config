@@ -1,6 +1,6 @@
 [user]
 	name = Masaharu TASHIRO
-	email = masatsr.kit@gmail.com
+	email = tasshi.me@gmail.com
 [core]
 	quotepath = false
 	pager = delta
@@ -15,7 +15,7 @@
     file-decoration-style = none
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -27,13 +27,13 @@
 [init]
 	defaultBranch = main
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://github.dev.cybozu.co.jp"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [push]
 	autoSetupRemote = true
