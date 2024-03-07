@@ -1,5 +1,5 @@
 init.author.name=Masaharu TASHIRO
-init.author.email=masatsr.kit@gmail.com
+init.author.email=tasshi.me@gmail.com
 init.author.url=https://tasshi.me/
 prefix=${XDG_DATA_HOME}/npm
 cache=${XDG_CACHE_HOME}/npm
