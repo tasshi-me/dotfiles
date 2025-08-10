@@ -23,6 +23,7 @@ brew 'bat'
 brew 'hyperfine'
 brew 'git-delta'
 brew 'gh'
+brew '1password-cli'
 
 # package manager
 brew 'mas'
@@ -39,9 +40,6 @@ brew 'pandoc'
 
 # env
 brew 'direnv'
-
-# node
-brew 'yarn'
 
 # cask
 tap 'homebrew/cask'

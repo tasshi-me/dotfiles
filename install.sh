@@ -51,9 +51,9 @@ echo "--- Create symbolic link of ssh configuration ---"
 rm -f ~/.ssh/config
 ln -sn ${DOTFILES_DIR}/ssh/config ~/.ssh/config
 # Script to add alias for SSH with 1Password
-#agent_path="$(ls ~/Library/Group\ Containers/*.1password/t/agent.sock)"
-#mkdir -p ~/.1password
-#ln -s "$agent_path" ~/.1password/agent.sock
+agent_path="$(ls ~/Library/Group\ Containers/*.1password/t/agent.sock)"
+mkdir -p ~/.1password
+ln -s "$agent_path" ~/.1password/agent.sock
 
 # Karabiner-Elements
 echo "--- Create symbolic link of Karabiner-Elements configuration ---"
@@ -79,33 +79,6 @@ if type "defaults" > /dev/null 2>&1; then
   echo "--- Install Apps with Homebrew ---"
   brew bundle
 fi
-
-# nodenv
-# https://github.com/nodenv/nodenv
-echo "--- Install nodenv ---"
-rm -rf ${HOME}/.nodenv
-git clone https://github.com/nodenv/nodenv.git ${HOME}/.nodenv
-cd ${HOME}/.nodenv && src/configure && make -C src
-export PATH="${HOME}/.nodenv/bin:${PATH}"
-eval "$(nodenv init -)"
-
-mkdir -p "$(nodenv root)"/plugins
-# https://github.com/nodenv/nodenv-update
-git clone https://github.com/nodenv/nodenv-update.git "$(nodenv root)"/plugins/nodenv-update
-nodenv update
-
-# https://github.com/nodenv/node-build
-git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node-build
-
-NODE_VERSION=16.14.0
-nodenv install ${NODE_VERSION}
-nodenv rehash
-nodenv global ${NODE_VERSION}
-
-# https://github.com/nodenv/node-build-update-defs
-git clone https://github.com/nodenv/node-build-update-defs.git "$(nodenv root)"/plugins/node-build-update-defs
-# node-build-update-defs depends on node
-nodenv update-version-defs
 
 # rust
 # https://www.rust-lang.org/ja/learn/get-started
@@ -140,5 +113,9 @@ if type "defaults" > /dev/null 2>&1; then
   ln -sn ${DOCKER_APP_ETC}/docker.zsh-completion ${ZSH_SITE_FUNCTIONS}/_docker
   ln -sn ${DOCKER_APP_ETC}/docker-compose.zsh-completion ${ZSH_SITE_FUNCTIONS}/_docker-compose
 fi
+
+# Install mise
+curl https://mise.run | sh
+echo "eval \"\$(${HOME}/.local/bin/mise activate zsh)\"" >> "${HOME}/.config/zsh/.zshrc"
 
 echo "Done!!"

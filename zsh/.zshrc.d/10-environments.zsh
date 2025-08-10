@@ -12,6 +12,13 @@ if [[ -s "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+#------#
+# mise #
+#------#
+if [[ -s "${HOME}/.local/bin/mise" ]]; then
+  eval "$("${HOME}"/.local/bin/mise activate zsh)"
+fi
+
 #-----------#
 # JetBrains #
 #-----------#
@@ -31,17 +38,6 @@ export PATH="${CARGO_HOME}/bin:${PATH}"
 export GOPATH="${HOME}/go"
 export PATH="/usr/local/go/bin:${PATH}"
 export GO111MODULE=auto
-
-#------#
-# Ruby #
-#------#
-if [[ -s "/opt/homebrew/bin/brew" ]]; then
-  if [[ -s "$(brew --prefix)/opt/chruby/share/chruby/" ]]; then
-    source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
-    source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
-    chruby ruby-3.1.3
-  fi
-fi
 
 #---------#
 # Node.js #
@@ -83,45 +79,3 @@ if [[ -s "/opt/homebrew/bin/direnv" ]]; then
     eval "$(direnv hook bash)"
   fi
 fi
-## rbenv
-if [[ -s "${HOME}/.rbenv/bin/rbenv" ]]; then
-  export PATH="${HOME}/.rbenv/bin:${PATH}"
-  eval "$(rbenv init -)"
-fi
-## nodenv
-if [[ -s "${HOME}/.nodenv/bin/nodenv" ]]; then
-  export PATH="${HOME}/.nodenv/bin:${PATH}"
-  eval "$(nodenv init -)"
-fi
-## pyenv
-if [[ -e "${HOME}/.pyenv/bin/pyenv" ]]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-fi
-## tfenv
-if [[ -e "${HOME}/.tfenv/bin/tfenv" ]]; then
-  export TFENV_ROOT="$HOME/.tfenv"
-  export PATH="$TFENV_ROOT/bin:$PATH"
-fi
-
-#---------#
-# library #
-#---------#
-# mysql
-#export PATH="/usr/local/opt/mysql@5.7/bin:${PATH}"
-#export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
-#export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
-#export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"
-# mysql-client
-#export PATH="/usr/local/opt/mysql-client/bin:${PATH}"
-#export LDFLAGS="-L/usr/local/opt/mysql-client/lib"
-#export CPPFLAGS="-I/usr/local/opt/mysql-client/include"
-# openssl
-#export PATH="/usr/local/opt/openssl@1.1/bin:${PATH}"
-#export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-#export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-#export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
-# sdl2
-# export LIBRARY_PATH="${LIBRARY_PATH}:/usr/local/lib"
