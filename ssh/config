@@ -1,14 +1,13 @@
 # Load private host configurations
 Include ~/dotfiles-private/ssh/config
 
+Host github github.com
+        HostName github.com
+        User git
+
 Host *
         IdentityAgent "~/.1password/agent.sock"
         AddKeysToAgent yes
         UseKeychain yes
         PreferredAuthentications publickey,gssapi-with-mic,hostbased,keyboard-interactive,password
         ServerAliveInterval 60
-
-Host github github.com
-        HostName github.com
-        User git
-
