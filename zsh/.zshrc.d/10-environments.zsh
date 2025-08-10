@@ -63,6 +63,14 @@ if [[ -s "${HOME}/.orbstack/shell/init.zsh" ]]; then
   source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 fi
 
+#----------#
+#  gcloud  #
+#----------#
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "${HOME}/google-cloud-sdk/path.zsh.inc" ]; then . "${HOME}/google-cloud-sdk/path.zsh.inc"; fi
+# The next line enables shell command completion for gcloud.
+if [ -f "${HOME}/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME}/google-cloud-sdk/completion.zsh.inc"; fi
+
 #--------#
 # anyenv #
 #--------#
@@ -96,11 +104,6 @@ fi
 if [[ -e "${HOME}/.tfenv/bin/tfenv" ]]; then
   export TFENV_ROOT="$HOME/.tfenv"
   export PATH="$TFENV_ROOT/bin:$PATH"
-fi
-
-## kintone
-if [[ -e "${XDG_DATA_HOME}/kintone/bin/" ]]; then
-  export PATH="${XDG_DATA_HOME}/kintone/bin:$PATH"
 fi
 
 #---------#
