@@ -52,7 +52,7 @@ rm -f ~/.ssh/config
 ln -sn ${DOTFILES_DIR}/ssh/config ~/.ssh/config
 # Script to add alias for SSH with 1Password
 #agent_path="$(ls ~/Library/Group\ Containers/*.1password/t/agent.sock)"
-#mkdir -p ~/.1password/agent.sock
+#mkdir -p ~/.1password
 #ln -s "$agent_path" ~/.1password/agent.sock
 
 # Karabiner-Elements
