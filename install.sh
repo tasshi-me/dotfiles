@@ -46,6 +46,15 @@ echo "--- Create symbolic link of git configuration ---"
 rm -f ${XDG_CONFIG_HOME}/git
 ln -sn ${DOTFILES_DIR}/git ${XDG_CONFIG_HOME}/git
 
+# ssh
+echo "--- Create symbolic link of ssh configuration ---"
+rm -f ~/.ssh/config
+ln -sn ${DOTFILES_DIR}/ssh/config ~/.ssh/config
+# Script to add alias for SSH with 1Password
+#agent_path="$(ls ~/Library/Group\ Containers/*.1password/t/agent.sock)"
+#mkdir -p ~/.1password/agent.sock
+#ln -s "$agent_path" ~/.1password/agent.sock
+
 # Karabiner-Elements
 echo "--- Create symbolic link of Karabiner-Elements configuration ---"
 rm -f ${XDG_CONFIG_HOME}/karabiner
