@@ -81,6 +81,13 @@ git commit --allow-empty -m 'chore: initial commit'"
 # gitui (https://github.com/extrawurst/gitui)
 alias gui='gitui'
 
+#-----#
+# npm #
+#-----#
+# Prohibit npx and npm
+alias npx='echo "WARNING: Use of npx is prohibited. Please use pnpm exec instead." && false'
+alias npm='echo "WARNING: Use of npm is prohibited. Please use pnpm instead." && false'
+
 #--------#
 # others #
 #--------#
