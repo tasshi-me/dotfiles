@@ -46,6 +46,10 @@ echo "--- Create symbolic link of git configuration ---"
 rm -f ${XDG_CONFIG_HOME}/git
 ln -sn ${DOTFILES_DIR}/git ${XDG_CONFIG_HOME}/git
 
+# mise
+rm -f ${XDG_CONFIG_HOME}/mise
+ln -sn ${DOTFILES_DIR}/mise ${XDG_CONFIG_HOME}/mise
+
 # ssh
 echo "--- Create symbolic link of ssh configuration ---"
 rm -f ~/.ssh/config
