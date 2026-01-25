@@ -17,6 +17,7 @@
 
 # allowlist
 !/bash
+!/claude
 !/git
 !/karabiner
 !/mise

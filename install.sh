@@ -54,6 +54,13 @@ ln -sn ${DOTFILES_DIR}/mise ${XDG_CONFIG_HOME}/mise
 rm -f ${XDG_CONFIG_HOME}/pnpm
 ln -sn ${DOTFILES_DIR}/pnpm ${XDG_CONFIG_HOME}/pnpm
 
+# Claude Code
+echo "--- Create symbolic link of Claude Code configuration ---"
+mkdir -p ${HOME}/.claude
+rm -f ${HOME}/.claude/settings.json ${HOME}/.claude/CLAUDE.md
+ln -sn ${DOTFILES_DIR}/claude/settings.json ${HOME}/.claude/settings.json
+ln -sn ${DOTFILES_DIR}/claude/CLAUDE.md ${HOME}/.claude/CLAUDE.md
+
 # ssh
 echo "--- Create symbolic link of ssh configuration ---"
 rm -f ~/.ssh/config
