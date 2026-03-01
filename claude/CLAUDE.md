@@ -6,6 +6,11 @@ This file contains global instructions and context for Claude Code across all pr
 
 - Always respond in Japanese
 
+## Git Worktree
+
+- Use `git worktree` when working on multiple tasks in parallel
+- This avoids conflicts from switching branches in the same directory
+
 ## Commit Message
 
 - **Always** run `git status` and `git diff` to check the latest changes before committing
