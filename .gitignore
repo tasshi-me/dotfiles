@@ -27,3 +27,7 @@
 !/zsh
 !/iterm2
 !/ssh
+
+# claude: settings.json is generated from settings.base.json + settings.private.json
+/claude/settings.json
+/claude/settings.private.json

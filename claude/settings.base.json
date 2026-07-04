@@ -1,0 +1,19 @@
+{
+  "model": "claude-fable-5[1m]",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "test -f CLAUDE.local.md && echo '--- CLAUDE.local.md ---' && cat CLAUDE.local.md || true"
+          }
+        ]
+      }
+    ]
+  },
+  "autoUpdatesChannel": "stable",
+  "theme": "dark-daltonized",
+  "skipAutoPermissionPrompt": true,
+  "tui": "fullscreen"
+}
