@@ -61,10 +61,13 @@ ${DOTFILES_DIR}/claude/link.sh
 echo "--- Create symbolic link of ssh configuration ---"
 rm -f ~/.ssh/config
 ln -sn ${DOTFILES_DIR}/ssh/config ~/.ssh/config
-# Script to add alias for SSH with 1Password
-agent_path="$(ls ~/Library/Group\ Containers/*.1password/t/agent.sock)"
-mkdir -p ~/.1password
-ln -sfn "$agent_path" ~/.1password/agent.sock
+# Alias for SSH agent of 1Password
+# (skip when 1Password is not installed yet; it comes later via brew bundle)
+agent_socks=(${HOME}/Library/Group\ Containers/*.1password/t/agent.sock(N))
+if (( ${#agent_socks} > 0 )); then
+  mkdir -p ${HOME}/.1password
+  ln -sfn "${agent_socks[1]}" ${HOME}/.1password/agent.sock
+fi
 
 # Karabiner-Elements
 echo "--- Create symbolic link of Karabiner-Elements configuration ---"
