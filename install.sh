@@ -54,9 +54,6 @@ ln -sn ${DOTFILES_DIR}/mise ${XDG_CONFIG_HOME}/mise
 rm -f ${XDG_CONFIG_HOME}/pnpm
 ln -sn ${DOTFILES_DIR}/pnpm ${XDG_CONFIG_HOME}/pnpm
 
-# Claude Code
-${DOTFILES_DIR}/claude/link.sh
-
 # ssh
 echo "--- Create symbolic link of ssh configuration ---"
 rm -f ~/.ssh/config
@@ -93,6 +90,10 @@ if type "defaults" > /dev/null 2>&1; then
   echo "--- Install Apps with Homebrew ---"
   brew bundle
 fi
+
+# Claude Code
+# NOTE: after brew bundle because link.sh needs jq
+${DOTFILES_DIR}/claude/link.sh
 
 # rust
 # https://www.rust-lang.org/ja/learn/get-started
