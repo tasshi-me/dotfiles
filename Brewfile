@@ -16,14 +16,14 @@ brew 'zsh-completions'
 brew 'fd'
 brew 'tree'
 brew 'ncdu'
-brew 'tldr'
+# NOTE: tldr formula was disabled upstream (2025-10-24). Successor: brew 'tlrc'
+# brew 'tldr'
 brew 'htop'
 brew 'jq'
 brew 'bat'
 brew 'hyperfine'
 brew 'git-delta'
 brew 'gh'
-brew '1password-cli'
 
 # package manager
 brew 'mas'
@@ -42,22 +42,21 @@ brew 'pandoc'
 brew 'direnv'
 
 # cask
-tap 'homebrew/cask'
 cask 'iterm2'
 cask 'karabiner-elements'
 cask 'amethyst'
 cask 'monitorcontrol'
 cask 'alfred'
 cask '1password'
+cask '1password-cli'
 cask 'google-chrome'
 cask 'visual-studio-code'
 cask 'jetbrains-toolbox'
 # cask 'zoom'
-cask 'docker'
+cask 'docker-desktop'
 cask 'postman'
 
 # font
-tap 'homebrew/cask-fonts'
 cask 'font-hackgen-nerd'
 
 mas 'RunCat', id: 1429033973
