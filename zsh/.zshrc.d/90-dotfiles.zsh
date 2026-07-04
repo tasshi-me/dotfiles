@@ -46,5 +46,10 @@ subcommands:
   (( ${#counts} == 2 )) || return 0
   (( counts[1] > 0 )) && print -P "%F{yellow}⚠ dotfiles: ${counts[1]} commit(s) not pushed%f\n  run: dot push"
   (( counts[2] > 0 )) && print -P "%F{yellow}⚠ dotfiles: ${counts[2]} commit(s) behind origin%f\n  run: dot pull"
+
+  # Claude settings: repair a broken ~/.claude/settings.json symlink and
+  # warn when live settings are not backported to base/private.
+  local guard="${dir}/claude/bin/settings-symlink-guard.sh"
+  [[ -x "${guard}" ]] && "${guard}"
   return 0
 }
