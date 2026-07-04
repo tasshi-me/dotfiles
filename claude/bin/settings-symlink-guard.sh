@@ -38,7 +38,7 @@ if ! drift="$(diff <(printf '%s\n' "$merged") <(jq -S . "$GENERATED"))"; then
   echo "--- settings-symlink-guard ---"
   echo "WARNING: live Claude settings have drifted from settings.base.json + settings.private.json."
   echo "Backport the differences below into ${CLAUDE_DIR}/settings.base.json (generic)"
-  echo "or ${CLAUDE_DIR}/settings.private.json (machine-local/private), then run install.sh."
-  echo "Until then, re-running install.sh would discard the right-hand side ('>') lines."
+  echo "or ${CLAUDE_DIR}/settings.private.json (machine-local/private), then run 'dot claude-link'."
+  echo "Until then, re-running claude/link.sh would discard the right-hand side ('>') lines."
   echo "$drift"
 fi

@@ -14,7 +14,7 @@ description: |
 
 ## 背景
 
-- `claude/settings.json` は生成物(gitignore 済み)。`install.sh` が
+- `claude/settings.json` は生成物(gitignore 済み)。`claude/link.sh`(`dot claude-link`) が
   `settings.base.json`(追跡・公開) と `settings.private.json`(untracked・私物) を
   `jq -s '.[0] * .[1]'` でマージして生成し、`~/.claude/settings.json` から symlink される
 - Claude Code が実行時に設定を書くと symlink が実体ファイル化し乖離が生まれる。
@@ -47,7 +47,7 @@ description: |
 4. **再マージして検証する**
 
    ```sh
-   jq -s '.[0] * .[1]' claude/settings.base.json claude/settings.private.json > claude/settings.json
+   ./claude/link.sh                         # 再マージ + symlink 張り直し
    ./claude/bin/settings-symlink-guard.sh   # 何も出力されなければ乖離解消
    ```
 

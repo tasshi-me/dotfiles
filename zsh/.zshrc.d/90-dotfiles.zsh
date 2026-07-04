@@ -10,15 +10,15 @@ function dot() {
     cd)
       cd "${dir}"
       ;;
-    install)
-      ( cd "${dir}" && ./install.sh )
+    claude-link)
+      "${dir}/claude/link.sh"
       ;;
     help|-h|--help)
       print -r -- "usage: dot <subcommand>
 
 subcommands:
   cd          cd into the dotfiles repo
-  install     run install.sh (re-link configs, re-merge claude settings)
+  claude-link re-merge and re-link claude settings (claude/link.sh)
   help        show this help
   <git args>  anything else runs git against the repo
               (e.g. dot status, dot push, dot log --oneline)"
