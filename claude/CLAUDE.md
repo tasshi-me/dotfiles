@@ -24,6 +24,7 @@ This file contains global instructions and context for Claude Code across all pr
 
 - If the repository has a PR template, follow it when creating pull requests
   - Common locations: `.github/PULL_REQUEST_TEMPLATE.md`, `.github/pull_request_template.md`, `docs/pull_request_template.md`, or root directory
+- **NEVER** add Claude attribution to PR/Issue bodies (e.g. "🤖 Generated with [Claude Code](...)" footer)
 
 ## Planning
 
