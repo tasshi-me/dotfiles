@@ -10,6 +10,7 @@
 # project file
 !/README.md
 !/LICENSE
+!/renovate.json
 
 # install script
 !/install.sh
