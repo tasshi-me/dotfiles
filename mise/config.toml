@@ -3,5 +3,5 @@ idiomatic_version_file_enable_tools = ["node"]
 
 [tools]
 node = "24.16.0"
-pnpm = "11.6.0"
+pnpm = "11.9.0"
 python = "3.14.3"
