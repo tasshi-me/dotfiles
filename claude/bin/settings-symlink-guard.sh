@@ -11,6 +11,7 @@ LIVE="${HOME}/.claude/settings.json"
 GENERATED="${CLAUDE_DIR}/settings.json"
 BASE="${CLAUDE_DIR}/settings.base.json"
 PRIVATE="${CLAUDE_DIR}/settings.private.json"
+MERGE="${CLAUDE_DIR}/bin/merge-settings.jq"
 
 [ -e "$LIVE" ] || exit 0
 
@@ -27,11 +28,12 @@ fi
 
 command -v jq >/dev/null 2>&1 || exit 0
 [ -f "$BASE" ] || exit 0
+[ -f "$MERGE" ] || exit 0
 
 if [ -f "$PRIVATE" ]; then
-  merged="$(jq -s -S '.[0] * .[1]' "$BASE" "$PRIVATE")"
+  merged="$(jq -s -S -f "$MERGE" "$BASE" "$PRIVATE")"
 else
-  merged="$(jq -S . "$BASE")"
+  merged="$(jq -s -S -f "$MERGE" "$BASE")"
 fi
 
 if ! drift="$(diff <(printf '%s\n' "$merged") <(jq -S . "$GENERATED"))"; then

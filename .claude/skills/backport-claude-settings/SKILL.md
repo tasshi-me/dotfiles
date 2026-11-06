@@ -16,7 +16,7 @@ description: |
 
 - `claude/settings.json` は生成物(gitignore 済み)。`claude/link.sh`(`dot claude-link`) が
   `settings.base.json`(追跡・公開) と `settings.private.json`(untracked・私物) を
-  `jq -s '.[0] * .[1]'` でマージして生成し、`~/.claude/settings.json` から symlink される
+  `claude/bin/merge-settings.jq` でマージして生成し、`~/.claude/settings.json` から symlink される
 - Claude Code が実行時に設定を書くと symlink が実体ファイル化し乖離が生まれる。
   symlink の修復は `claude/bin/settings-symlink-guard.sh` が自動で行うが、
   **差分の振り分けは手動(このスキルの仕事)**
@@ -26,7 +26,7 @@ description: |
 1. **差分を確認する**
 
    ```sh
-   diff <(jq -S -s '.[0] * .[1]' claude/settings.base.json claude/settings.private.json) \
+   diff <(jq -S -s -f claude/bin/merge-settings.jq claude/settings.base.json claude/settings.private.json) \
         <(jq -S . claude/settings.json)
    ```
 
@@ -58,6 +58,7 @@ description: |
 
 - `settings.private.json` は untracked。git 操作(stash 等)に巻き込まれないが、
   バックアップも無いので上書き編集は慎重に
-- マージは shallow ではなく `jq` の `*`(再帰マージ)。同名キー配下はオブジェクト単位で
-  マージされるが、**配列は置換**される(hooks の配列に要素を足す場合は private 側に
-  配列全体を持たせる)
+- マージ規則は `claude/bin/merge-settings.jq` に定義。基本は `jq` の `*`(再帰マージ、
+  private 優先)だが、**`hooks.<Event>` の配列だけは base → private の順に連結**される
+  (重複は除去)。private に hook を足すときは base の分を書き写さず、追加分だけ書く。
+  hooks 以外の配列は `*` と同じく置換される
