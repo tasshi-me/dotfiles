@@ -15,6 +15,28 @@
           }
         ]
       }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$HOME\"/dotfiles/claude/bin/progress-reminder.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$HOME\"/dotfiles/claude/bin/progress-reminder.sh",
+            "timeout": 10
+          }
+        ]
+      }
     ]
   },
   "autoUpdatesChannel": "stable",
