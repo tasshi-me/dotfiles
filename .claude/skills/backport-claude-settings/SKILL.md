@@ -62,3 +62,9 @@ description: |
   private 優先)だが、**`hooks.<Event>` の配列だけは base → private の順に連結**される
   (重複は除去)。private に hook を足すときは base の分を書き写さず、追加分だけ書く。
   hooks 以外の配列は `*` と同じく置換される
+- `extraKnownMarketplaces` の差分は、プロジェクト単位でプラグインを入れた副作用であることが多い。
+  Claude Code は `claude plugin marketplace add` や `--scope project` でのインストールでも、
+  マーケットプレイス自体は**常にユーザー設定** `~/.claude/settings.json` に書き込む仕様
+  ([docs](https://code.claude.com/docs/en/plugins/install.md))。
+  動作上はプロジェクト設定だけで足りるが、消しても次の操作で書き戻されるので、
+  そのまま private に取り込むのが楽。live 側から消えたエントリ(`<` 側)も private から削除して追従する
