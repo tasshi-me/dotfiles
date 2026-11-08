@@ -36,8 +36,8 @@ description: |
 
    | 振り分け先 | 基準 | 例 |
    |---|---|---|
-   | `settings.base.json` | 汎用設定。個人情報・社内情報・マシン固有パスを一切含まない | `model`, `theme`, `tui`, `autoUpdatesChannel` |
-   | `settings.private.json` | 私物・社内・マシン固有 | 絶対パスを含む hooks、`enabledPlugins`、`extraKnownMarketplaces`(特に `kintone-private/*`) |
+   | `settings.base.json` | 汎用設定。個人情報・社内情報・マシン固有パスを一切含まない | `theme`, `tui`, `autoUpdatesChannel` |
+   | `settings.private.json` | 私物・社内・マシン固有、または頻繁に切り替える設定 | `model`(`/model` で都度変わるためコミット対象にしない)、絶対パスを含む hooks、`enabledPlugins`、`extraKnownMarketplaces`(特に `kintone-private/*`) |
 
    **このリポジトリは PUBLIC。** base に入れた内容はそのまま公開される。
    社内リポジトリ名・`$HOME` 配下の絶対パス・メールアドレス等は必ず private へ。

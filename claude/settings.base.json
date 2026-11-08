@@ -1,5 +1,4 @@
 {
-  "model": "fable[1m]",
   "hooks": {
     "SessionStart": [
       {
