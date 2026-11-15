@@ -18,3 +18,12 @@ jq -s -f ${DOTFILES_DIR}/claude/bin/merge-settings.jq ${DOTFILES_DIR}/claude/set
 rm -f ${HOME}/.claude/settings.json ${HOME}/.claude/CLAUDE.md
 ln -sn ${DOTFILES_DIR}/claude/settings.json ${HOME}/.claude/settings.json
 ln -sn ${DOTFILES_DIR}/claude/CLAUDE.md ${HOME}/.claude/CLAUDE.md
+
+# Link the whole skills directory so skills edited via Claude Code land in the repo.
+if [ -d ${HOME}/.claude/skills ] && [ ! -L ${HOME}/.claude/skills ]; then
+  echo "error: ~/.claude/skills is a real directory. Move its contents to ${DOTFILES_DIR}/claude/skills, remove it, then re-run." >&2
+  exit 1
+fi
+mkdir -p ${DOTFILES_DIR}/claude/skills
+rm -f ${HOME}/.claude/skills
+ln -sn ${DOTFILES_DIR}/claude/skills ${HOME}/.claude/skills
